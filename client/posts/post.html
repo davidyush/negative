@@ -1,0 +1,25 @@
+<template name="post">
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+      <div class="well">
+        <div class="header clearfix">
+          <div class="pull-left">
+            <h4>{{title}}</h4>
+          </div>
+          <div class="pull-right">
+            <h6>{{dateCreated}}</h6>
+          </div>
+        </div>
+        <hr>
+        <img src="{{image}}" class="img-responsive">
+        <p class="form-text">{{text}}</p>
+        <ul class="list-unstyled list-inline">
+          {{#each tags}}
+            <li><a href="#">{{this}}</a></li>
+          {{/each}}
+        </ul>
+        <a href="{{pathFor 'postPage'}}" class="btn btn-info">More</a>
+      </div>
+    </div>
+  </div>
+</template>
