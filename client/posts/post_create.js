@@ -1,5 +1,5 @@
 Template.postCreate.events({
-  'submit .form-create': function(e) {
+  'submit .form-create-text': function(e) {
     e.preventDefault();
 
     var tags = e.target.tags.value;
@@ -15,7 +15,6 @@ Template.postCreate.events({
     console.log(tags);
     var post = {
       title:e.target.title.value,
-      image: e.target.image.value,
       text: e.target.text.value,
       tags:tags,
       dateCreated: time

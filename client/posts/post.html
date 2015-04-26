@@ -7,18 +7,21 @@
             <h4>{{title}}</h4>
           </div>
           <div class="pull-right">
-            <h6>{{dateCreated}}</h6>
+            <p><small>{{dateCreated}}</small></p>
           </div>
         </div>
         <hr>
-        <img src="{{image}}" class="img-responsive">
+        {{#if image}}
+          <img src="{{image}}" class="img-responsive">
+        {{/if}}
         <p class="form-text">{{text}}</p>
         <ul class="list-unstyled list-inline">
           {{#each tags}}
-            <li><a href="#">{{this}}</a></li>
+            <li><a class="tag" href="#">{{this}}</a></li>
           {{/each}}
         </ul>
-        <a href="{{pathFor 'postPage'}}" class="btn btn-info">More</a>
+        <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
+        <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
       </div>
     </div>
   </div>
