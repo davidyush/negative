@@ -8,12 +8,12 @@ Template.postEdit.events({
     tags = tags.split("#");
     tags.shift();
     for(var i = 0; i < tags.length;i++) {
-      tags[i] = "#" + tags[i].trim();
+      tags[i] = tags[i].trim();
     }
-
+    console.log(tags);
     var postProperies = {
       title: e.target.title.value,
-      image: e.target.image.value,
+      // image: e.target.image.value,
       text:  e.target.text.value,
       tags:  e.target.tags.value,
     }

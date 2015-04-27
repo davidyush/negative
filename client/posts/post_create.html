@@ -11,72 +11,18 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade in active" id="create-text">
-            <form role="form" class="form-create-text">
-              <div class="form-group">
-                <input name="title" type="text" class="form-control" placeholder="Your title">
-              </div>
-              <div class="form-group">
-                <textarea name="text" rows="3" placeholder="Your text" class="form-control create-text"></textarea>
-              </div>
-              <div class="form-group">
-                <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-info">Submit</button>
-              </div>
-            </form>
+            {{> createText}}
           </div>
           <div class="tab-pane fade" id="create-image">
-            <form role="form" class="form-create-image">
-              <div class="form-group">
-                <input name="title" type="text" class="form-control" placeholder="Your title">
-              </div>
-              <div class="form-group">
-                <input name="image" type="text" class="form-control" placeholder="Http of an image">
-              </div>
-              <div class="form-group">
-                <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-info">Submit</button>
-              </div>
-            </form>
-
+            {{> createImage}}
           </div>
           <div class="tab-pane fade" id="create-link">
-            <form role="form" class="form-create-link">
-              <div class="form-group">
-                <input name="title" type="text" class="form-control" placeholder="Your title">
-              </div>
-              <div class="form-group">
-                <input name="image" type="text" class="form-control" placeholder="Http of a link">
-              </div>
-              <div class="form-group">
-                <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-info">Submit</button>
-              </div>
-            </form>
+            {{> createLink}}
           </div>
           <div class="tab-pane fade" id="create-youtube">
-            <form role="form" class="form-create-youtube">
-              <div class="form-group">
-                <input name="title" type="text" class="form-control" placeholder="Your title">
-              </div>
-              <div class="form-group">
-                <input name="youtube" type="text" class="form-control" placeholder="Youtube link">
-              </div>
-              <div class="form-group">
-                <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-info">Submit</button>
-              </div>
-            </form>
+            {{> createYoutube}}
           </div>
         </div>
-
       </div>
     </div>
   </div>

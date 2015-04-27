@@ -6,14 +6,16 @@
           <div class="form-group">
             <input name="title" type="text" class="form-control" placeholder="Your title" value="{{title}}">
           </div>
+          {{#if image}}
           <div class="form-group">
             <input name="image" type="text" class="form-control" placeholder="http of an image" value="{{image}}">
           </div>
+          {{/if}}
           <div class="form-group">
             <textarea name="text" rows="3" placeholder="Your text" class="form-control create-text">{{text}}</textarea>
           </div>
           <div class="form-group">
-            <input name="tags" type="text" class="form-control" placeholder="Type the hash-tags" value={{tags}}>
+            <input name="tags" type="text" class="form-control" placeholder="Type the hash-tags" value="{{#each tags}} #{{this}} {{/each}}">
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-default">Submit</button>

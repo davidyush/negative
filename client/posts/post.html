@@ -11,17 +11,23 @@
           </div>
         </div>
         <hr>
+        {{#if link}}
+        <h5><a href="{{link}}">{{nameLink}}</a></h5>
+        {{/if}}
         {{#if image}}
           <img src="{{image}}" class="img-responsive">
+        {{/if}}
+        {{#if youtubeId}}
+          <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubeId}}" frameborder="0" allowfullscreen></iframe>
         {{/if}}
         <p class="form-text">{{text}}</p>
         <ul class="list-unstyled list-inline">
           {{#each tags}}
-            <li><a class="tag" href="#">{{this}}</a></li>
+            <li><a class="tag" href="{{pathFor 'postsTag' tag=this}}">#{{this}}</a></li>
           {{/each}}
         </ul>
         <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
-        <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
+        <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a>
       </div>
     </div>
   </div>
