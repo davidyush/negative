@@ -13,12 +13,12 @@ Template.createYoutube.events({
     time = time.toLocaleTimeString() + " " + time.toDateString();
 
     var link = e.target.youtube.value;
+    //var id = link.split("v=")[1].substring(0, 11)
     var id = link.split("=");
     id.shift();
     id = id.join('');
-    console.log("link", link);
-    console.log("id:", id);
-
+    // console.log("link", link);
+    // console.log("id:", id);
 
     var post = {
       title: e.target.title.value,
@@ -27,9 +27,12 @@ Template.createYoutube.events({
       dateCreated: time
     };
 
-    post._id = Posts.insert(post);
+    Meteor.call('youtubeInsert', post, function(error,result) {
+      if(error)
+        return throwError(error.reason);
 
-    Router.go('postPage',post);
+      Router.go('postPage',{_id:result._id});
+    });
 
   }
 });

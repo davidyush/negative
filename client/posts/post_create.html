@@ -1,13 +1,29 @@
 <template name="postCreate">
-  <div class="container">
+  <div class="container create-post">
     <div class="row create">
       <div class="col-md-8">
         <h3>Create Post</h3>
-        <ul class="nav nav-tabs nav-justified" role="tablist">
-          <li role="presentation" class="active"><a data-toggle="tab" href="#create-text">Text</a></li>
-          <li role="presentation"><a data-toggle="tab" href="#create-image">Image</a></li>
-          <li role="presentation"><a data-toggle="tab" href="#create-link">Link</a></li>
-          <li role="presentation"><a data-toggle="tab" href="#create-youtube">YouTube</a></li>
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li role="presentation" class="active">
+            <a data-toggle="tab" href="#create-text">
+              <i class="fa fa-file-text fa-3x"></i>
+            </a>
+          </li>
+          <li role="presentation">
+            <a data-toggle="tab" href="#create-image">
+              <i class="fa fa-camera-retro fa-3x"></i>
+            </a>
+          </li>
+          <li role="presentation">
+            <a data-toggle="tab" href="#create-link">
+              <i class="fa fa-link fa-3x"></i>
+            </a>
+          </li>
+          <li role="presentation">
+            <a data-toggle="tab" href="#create-youtube">
+              <i class="fa fa-youtube-square fa-3x"></i>
+            </a>
+          </li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade in active" id="create-text">

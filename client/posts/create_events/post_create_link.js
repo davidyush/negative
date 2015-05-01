@@ -12,17 +12,27 @@ Template.createLink.events({
     var time = new Date();
     time = time.toLocaleTimeString() + " " + time.toDateString();
 
+    var a = document.createElement('a');
+    a.href = e.target.link.value;
+    console.log('a.href',a.href);
+    domain = a.hostname;
+    console.log("domain",domain);
+
     console.log(tags);
     var post = {
       title:e.target.title.value,
       link: e.target.link.value,
       nameLink: e.target.nameLink.value,
+      domain: domain,
       tags:tags,
       dateCreated: time
     };
 
-    post._id = Posts.insert(post);
+    Meteor.call('linkInsert', post, function(error,result) {
+      if(error)
+        return throwError(error.reason);
 
-    Router.go('postPage',post);
+      Router.go('postPage',{_id:result._id});
+    });
   }
 });

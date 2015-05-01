@@ -1,3 +1,5 @@
+Session.set('symbols',0);
+
 Template.createText.events({
   'submit .form-create-text': function(e) {
     e.preventDefault();
@@ -12,7 +14,11 @@ Template.createText.events({
     var time = new Date();
     time = time.toLocaleTimeString() + " " + time.toDateString();
 
-    console.log(tags);
+    // var text = e.target.text.value;
+    // if(text.length > 50) {
+    //   throwError("More than 50 symbols!");
+    // }
+
     var post = {
       title:e.target.title.value,
       text: e.target.text.value,
@@ -20,8 +26,11 @@ Template.createText.events({
       dateCreated: time
     };
 
-    post._id = Posts.insert(post);
+    Meteor.call('textInsert', post, function(error,result) {
+      if(error)
+        return throwError(error.reason);
 
-    Router.go('postPage',post);
+      Router.go('postPage',{_id:result._id});
+    });
   }
 });

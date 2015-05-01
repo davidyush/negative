@@ -20,8 +20,12 @@ Template.createImage.events({
       dateCreated: time
     };
 
-    post._id = Posts.insert(post);
+    Meteor.call('imageInsert', post, function(error,result) {
+      if(error)
+        return throwError(error.reason);
 
-    Router.go('postPage',post);
+      Router.go('postPage',{_id:result._id});
+    });
+
   }
 });

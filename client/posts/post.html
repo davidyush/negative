@@ -1,5 +1,4 @@
 <template name="post">
-  <div class="row">
     <div class="col-md-7 col-sm-12">
       <div class="well">
         <div class="header clearfix">
@@ -12,23 +11,37 @@
         </div>
         <hr>
         {{#if link}}
-        <h5><a href="{{link}}">{{nameLink}}</a></h5>
+        <h5><a target="_blank" href="{{link}}">{{nameLink}}</a></h5>
+        <h6>{{domain}}</h6>
         {{/if}}
-        {{#if image}}
-          <img src="{{image}}" class="img-responsive">
-        {{/if}}
+        <div class="row">
+          <div class="col-md-11 col-sm-12">
+            {{#if image}}
+              <img src="{{image}}" class="img-responsive">
+            {{/if}}
+          </div>
+        </div>
         {{#if youtubeId}}
           <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubeId}}" frameborder="0" allowfullscreen></iframe>
         {{/if}}
         <p class="form-text">{{text}}</p>
-        <ul class="list-unstyled list-inline">
+        <ul class="list-unstyled list-inline tags-list">
           {{#each tags}}
             <li><a class="tag" href="{{pathFor 'postsTag' tag=this}}">#{{this}}</a></li>
           {{/each}}
         </ul>
-        <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
-        <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a>
+        <div class="clearfix">
+          <div class="pull-left">
+            <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
+            <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
+            <!-- <button class="btn btn-danger delete">Delete</button> -->
+          </div>
+          {{#if author}}
+          <div class="pull-right">
+            <p><small>Posted by {{author}}</small></p>
+          </div>
+          {{/if}}
+        </div>
       </div>
     </div>
-  </div>
 </template>
