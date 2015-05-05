@@ -1,27 +1,36 @@
 <template name="postCreate">
   <div class="container create-post">
     <div class="row create">
-      <div class="col-md-8">
-        <h3>Create Post</h3>
+      <div class="col-md-8 col-md-offset-1 col-sm-12">
         <ul class="nav nav-pills nav-justified" role="tablist">
           <li role="presentation" class="active">
             <a data-toggle="tab" href="#create-text">
-              <i class="fa fa-file-text fa-3x"></i>
+              <i class="fa fa-file-text fa-4x"></i>
             </a>
           </li>
           <li role="presentation">
             <a data-toggle="tab" href="#create-image">
-              <i class="fa fa-camera-retro fa-3x"></i>
+              <i class="fa fa-camera-retro fa-4x"></i>
             </a>
           </li>
           <li role="presentation">
             <a data-toggle="tab" href="#create-link">
-              <i class="fa fa-link fa-3x"></i>
+              <i class="fa fa-link fa-4x"></i>
             </a>
           </li>
           <li role="presentation">
             <a data-toggle="tab" href="#create-youtube">
-              <i class="fa fa-youtube-square fa-3x"></i>
+              <i class="fa fa-youtube fa-4x"></i>
+            </a>
+          </li>
+          <li role="presentation">
+            <a data-toggle="tab" href="#create-vk">
+              <i class="fa fa-vk fa-4x"></i>
+            </a>
+          </li>
+          <li role="presentation">
+            <a data-toggle="tab" href="#create-facebook">
+              <i class="fa fa-facebook fa-4x"></i>
             </a>
           </li>
         </ul>
@@ -37,6 +46,12 @@
           </div>
           <div class="tab-pane fade" id="create-youtube">
             {{> createYoutube}}
+          </div>
+          <div class="tab-pane fade" id="create-vk">
+            {{> createVk}}
+          </div>
+          <div class="tab-pane fade" id="create-facebook">
+            {{> createFacebook}}
           </div>
         </div>
       </div>

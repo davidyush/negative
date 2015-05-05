@@ -1,0 +1,45 @@
+anim($name,$sec,$ease)
+  -webkit-animation $name $sec $ease 1 forwards
+  -moz-animation $name $sec $ease 1 forwards
+  animation $name $sec $ease 1 forwards
+
+transform($what)
+  -webkit-transform $what
+  -moz-transform $what
+  transform $what
+
+@keyframes fadeOut
+  0%
+    opacity 0
+    transform(scale(0.5))
+  10%
+    opacity 1
+    transform(scale(1))
+  50%
+    opacity 1
+  55%
+    transform(translateX(0))
+  95%
+    opacity 0.1
+  100%
+    transform(translateX(530px))
+
+.errors
+  position fixed
+  z-index 10000
+  padding 10px
+  top 0px
+  left 0px
+  right 0px
+  bottom 0px
+  pointer-events none
+
+
+.alert
+  anim(fadeOut,3s,ease-out)
+  // -moz-animation fadeOut 3500ms ease-in-out 0s 1 forwards
+  width 250px
+  float right
+  clear both
+  margin-bottom 5px
+  pointer-events auto

@@ -17,14 +17,15 @@ padding-side($val)
   width:100%;
   height: 450px;
 
-.form-create-text
-  textarea.form-control
-    height auto
+.create-comment
+  height auto
+  resize none
+
+textarea.form-control
+  height auto
 
 .nav.nav-pills > li
   display table-cell
-
-
 
 a:active,a:hover,a:focus,
 textarea:active,textarea:hover,textarea:focus
@@ -34,76 +35,12 @@ input:focus,button:focus,
   outline none
   overflow hidden
 
-.navbar-right
-  .form-control
-    border-bottom 1px solid #ecede5
-    color #ecede5
-.dropdown-menu
-  .form-control
-    border-bottom 1px solid #ecede5
-    color #ecede5
 #login-dropdown-list input:last-of-type
     border-bottom-left-radius 0
     border-bottom-right-radius 0
 
-@keyframes fadeOut
-  0%
-    opacity 0
-  10%
-    opacity 1
-  35%
-    -webkit-transform scale(1.1)
-    transform scale(1.1)
-  70%
-    opacity 1
-  100%
-    opacity 0
-    -webkit-transform scale(.8)
-    transform scale(.8)
 
-
-.errors
-  position fixed
-  z-index 10000
-  padding 10px
-  top 0px
-  left 0px
-  right 0px
-  bottom 0px
-  pointer-events none
-
-.alert
-  animation fadeOut 3500ms ease-in-out 0s 1 forwards
-  -webkit-animation fadeOut 3500ms ease-in-out 0s 1 forwards
-  -moz-animation fadeOut 3500ms ease-in-out 0s 1 forwards
-  width 250px
-  float right
-  clear both
-  margin-bottom 5px
-  pointer-events auto
-
-
-
-
-
-@media only screen and (max-width:360px)
-  .well
-    padding-side(1px)
-  .main
-    .container.create-post
-      padding-side(15px)
-    .container
-      padding-side(0px)
-    .col-sm-12
-      padding-side(0px)
-      .clearfix,.tags-list,h5,h6,p.form-text
-        padding-side(10px)
-
-  .pull-left
-    .btn-success
-      width 100px
-  .iframe
-    width 100%
-    height 250px
-  .search-tag
-    width 100%
+.navbar-right
+  .form-control
+    border-bottom 1px solid #ecede5
+    color #ecede5

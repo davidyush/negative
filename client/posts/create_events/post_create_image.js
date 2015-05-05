@@ -15,6 +15,7 @@ Template.createImage.events({
     console.log(tags);
     var post = {
       title:e.target.title.value,
+      text: e.target.text.value,
       image: e.target.image.value,
       tags:tags,
       dateCreated: time

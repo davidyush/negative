@@ -4,4 +4,10 @@
       {{> post}}
     </div>
   </div>
+    {{#each comments}}
+      {{> comment}}
+    {{/each}}
+    {{#if currentUser}}
+      {{> createComment}}
+    {{/if}}
 </template>

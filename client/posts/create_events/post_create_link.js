@@ -23,6 +23,7 @@ Template.createLink.events({
       title:e.target.title.value,
       link: e.target.link.value,
       nameLink: e.target.nameLink.value,
+      text: e.target.text.value,
       domain: domain,
       tags:tags,
       dateCreated: time

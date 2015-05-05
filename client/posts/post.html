@@ -11,18 +11,30 @@
         </div>
         <hr>
         {{#if link}}
-        <h5><a target="_blank" href="{{link}}">{{nameLink}}</a></h5>
+        <h5><a target="_blank" title="{{link}}" href="{{link}}">{{nameLink}}</a></h5>
         <h6>{{domain}}</h6>
         {{/if}}
+        {{#if image}}
         <div class="row">
           <div class="col-md-11 col-sm-12">
-            {{#if image}}
-              <img src="{{image}}" class="img-responsive">
-            {{/if}}
+            <img src="{{image}}" class="img-responsive">
           </div>
         </div>
+        {{/if}}
         {{#if youtubeId}}
           <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubeId}}" frameborder="0" allowfullscreen></iframe>
+        {{/if}}
+        {{#if profileImgUrl}}
+        <div class="row">
+          <div class="col-md-5 col-sm-12">
+            <img src="{{profileImgUrl}}">
+          </div>
+          <div class="col-md-5 col-sm-12">
+            <h3>{{profileName}}</h3>
+            <h4>{{profileGender}}</h4>
+            <h6><a target="_blank" href="{{profileLink}}">Link on profile</a></h6>
+          </div>
+        </div>
         {{/if}}
         <p class="form-text">{{text}}</p>
         <ul class="list-unstyled list-inline tags-list">
@@ -32,7 +44,7 @@
         </ul>
         <div class="clearfix">
           <div class="pull-left">
-            <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
+            <a href="{{pathFor 'postPage'}}" class="btn btn-success">{{commentsCount}} comments</a>
             <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
             <!-- <button class="btn btn-danger delete">Delete</button> -->
           </div>

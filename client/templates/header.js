@@ -1,3 +1,8 @@
+var mobileNavToggle = function(action) {
+  if(Session.get('isMobile')) {
+    $("#nav-collapse").collapse(action);
+  }
+}
 Template.header.events({
   'click .search-tag':function(e) {
     e.preventDefault();
@@ -9,10 +14,19 @@ Template.header.events({
       tag_word = tag_word.join('');
     }
 
+    mobileNavToggle('toggle');
+
     if(tag_word)
       Router.go('/search/' + tag_word);
     else
       Router.go('/');
 
+  },
+  'click .sub-create': function() {
+    mobileNavToggle('toggle');
+  },
+  'click .navbar-brand': function() {
+    mobileNavToggle('hide');
   }
 });
+// $("#nav-collapse").collapse('show');

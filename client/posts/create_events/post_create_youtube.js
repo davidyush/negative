@@ -22,6 +22,7 @@ Template.createYoutube.events({
 
     var post = {
       title: e.target.title.value,
+      text: e.target.text.value,
       youtubeId: id,
       tags: tags,
       dateCreated: time
