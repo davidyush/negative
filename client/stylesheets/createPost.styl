@@ -1,9 +1,11 @@
-padding-side($val)
+padding-side($val,$valr)
   padding-left $val
-  padding-right $val
+  padding-right $valr
 
 .main
   margin-top 80px
+.create-post
+  margin-top 120px
 .create-text
   resize:none
 .form-text
@@ -44,3 +46,51 @@ input:focus,button:focus,
   .form-control
     border-bottom 1px solid #ecede5
     color #ecede5
+
+@media only screen and (max-width:440px)
+  .create-post
+    margin-top 0px
+  button.navbar-toggle
+    width 39px
+    border-radius 10px
+  .dropdown-menu
+    .form-control
+      border-bottom 1px solid #ecede5
+      color #ecede5
+
+  .nav.nav-pills > li
+    display block
+  .well
+    padding-side(1px,1px)
+    .row
+      padding-side(10px,10px)
+    .img-post
+      padding-side(0px,0px)
+  .main
+    .row
+      margin-left 0px
+      margin-right 0px
+    .container.create-post
+      padding-side(15px,15px)
+    .container
+      padding-side(0px,0px)
+      .col-sm-12
+        padding-side(0px,0px)
+        overflow hidden
+        .clearfix,.tags-list,h5,h6,p.form-text
+          padding-side(10px,10px)
+
+  .pull-left
+    .btn-success
+      width 100px
+  .iframe
+    width 100%
+    height 250px
+  .search-tag
+    width 100%
+  .create
+    .nav.nav-pills > li
+      display inline-block
+      font-size 11px
+      i.fa-4x
+        font-size 2em

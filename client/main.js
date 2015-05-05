@@ -1,3 +1,19 @@
+window.vkAsyncInit = function() {
+  VK.init({
+    apiId: "4905998"
+  });
+};
+
+setTimeout(function() {
+  var el = document.createElement("script");
+  el.type = "text/javascript";
+  el.src = "//vk.com/js/api/openapi.js";
+  el.async = true;
+  document.getElementsByTagName("body")[0].appendChild(el);
+}, 0);
+
+
+
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);

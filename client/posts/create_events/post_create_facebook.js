@@ -1,7 +1,6 @@
 Template.createFacebook.events({
   "submit .form-create-fb": function(e) {
     e.preventDefault();
-    console.log("what?");
     var tags = e.target.tags.value;
     tags = tags.split("#");
     tags.shift();
@@ -23,43 +22,38 @@ Template.createFacebook.events({
     }
     var urlProfile = e.target.fb.value;
     var idProfile = getUserId(urlProfile);
-    console.log("url:",urlProfile);
-    console.log("id:", idProfile);
+    console.log("url profile:", urlProfile);
     // -------hardcore facebook ajax-------
     // ------------what a shame------------
     var post = {};
     var user_info = {};
-
-    // $.getJSON(urlProfile,function(data) {
-    //   console.log(data);
-    // });
-
 
     $.ajax({
       url: "http://graph.facebook.com/" + urlProfile,
       dataType: 'jsonp',
       success: function(data) {
         user_info = data;
-        console.log(data);
-      },
-      fail: function() {
-        alert(fail);
       }
     }).done(function() {
       user_info.urlImg = "https://graph.facebook.com/"+user_info.username+"/picture?type=large";
-      console.log(user_info);
 
+      if(!user_info.gender) {
+        user_info.gender = "unknown";
+      }
+      if(!user_info.name) {
+        user_info.name = "unknown";
+      }
       post = {
         title: e.target.title.value,
-        profileName: user_info.name,
-        profileGender: user_info.gender,
-        profileImgUrl: user_info.urlImg,
-        profileLink: user_info.link,
         text: e.target.text.value,
         tags:tags,
-        dateCreated: time
+        dateCreated: time,
+        profileLink: urlProfile,
+        profileGender: user_info.gender,
+        profileName: user_info.name,
+        profileImgUrl: user_info.urlImg
       };
-
+      console.log(post);
       Meteor.call('facebookInsert', post, function(error,result) {
         if(error)
           return throwError(error.reason);

@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.use('templating',['web.browser','client']);
+  api.use('ian:accounts-ui-bootstrap-3','web.browser');
   api.use('jquery',['web.browser','client']);
   api.addFiles(['zboot.js','zboot.css'],'web.browser');
 });
