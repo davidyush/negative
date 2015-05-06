@@ -1,16 +1,20 @@
-window.vkAsyncInit = function() {
-  VK.init({
-    apiId: "4905998"
-  });
-};
+$(function() {
+  window.vkAsyncInit = function() {
+    VK.init({
+      apiId: "4906706"
+    });
+  };
 
-setTimeout(function() {
-  var el = document.createElement("script");
-  el.type = "text/javascript";
-  el.src = "//vk.com/js/api/openapi.js";
-  el.async = true;
-  document.getElementsByTagName("body")[0].appendChild(el);
-}, 0);
+  setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "//vk.com/js/api/openapi.js";
+    el.async = true;
+    console.log(document.getElementsByTagName("body")[0]);
+    // document.getElementsByTagName("body")[0].appendChild(el);
+    $("body").append(el);
+  }, 0);
+});
 
 
 
