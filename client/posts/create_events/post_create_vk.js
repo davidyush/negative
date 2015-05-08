@@ -26,15 +26,15 @@ Template.createVk.events({
       else if(num === 1)
         result = "female"
       else
-        result = "inknown"
+        result = "unknown"
       return result;
     }
 
     var inputLink = e.target.vkLink.value;
 
-    if(!inputLink) {
-      throwDangerError("vk fail, you are wrong!");
-    }
+    // if(!inputLink) {
+    //   throwDangerError("vk fail, you are wrong!");
+    // }
 
     var userId = getUserId(inputLink);
     var post = {
@@ -46,11 +46,16 @@ Template.createVk.events({
 
     var searchFields = ['sex','photo_200'];
     VK.Api.call('users.get',{ uids:userId,fields: searchFields }, function(res) {
-      if(res.response)
+      if(res.response) {
         console.log("The Response vk:",res.response[0]);
-      var name = res.response[0].first_name + " " + res.response[0].last_name;
-      var gender = getGender(res.response[0].sex);
-      var imgUrl = res.response[0].photo_200;
+      }
+
+      if(res.response[0] != undefined) {
+        var name = res.response[0].first_name + " " + res.response[0].last_name;
+        var gender = getGender(res.response[0].sex);
+        var imgUrl = res.response[0].photo_200;
+      }
+
       post = _.extend(post, {
          profileLink: inputLink,
          profileName: name,

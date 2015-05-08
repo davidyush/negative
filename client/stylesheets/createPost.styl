@@ -1,3 +1,58 @@
+// loading
+html,body,main
+  width 100%
+  height 100%
+
+.animo-cont
+  width 100%
+  height 100%
+  margin 0 auto
+  position relative
+
+animo($name,$time,$cubik,$delay)
+  -webkit-animation $name $delay $cubik $time infinite
+  -moz-animation $name $delay $cubik $time infinite
+  animation $name $delay $cubik $time infinite
+
+trans($what)
+  -webkit-transform $what
+  -moz-transform $what
+  transform $what
+@keyframes blameing
+  0%
+    opacity 0
+    trans(scale(0.8))
+  35%
+    opacity 1
+    trans(scale(1.2))
+  100%
+    opacity 0
+    trans(scale(1))
+.block-animation
+  border-radius 5px
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%,-100%)
+  p
+    text-align center
+    font-family "Grenadier NF"
+    font-weight bold
+    font-size 60px
+    color #5d1722
+    line-height 45px
+    text-shadow 1px 1px 1px #536e69
+    .first
+      animo(blameing,0s,ease-in-out,3.2s)
+    .second
+      animo(blameing,.4s,ease-in-out,3.2s)
+    .third
+      animo(blameing,.7s,ease-in-out,3.2s)
+
+
+
+// end of loading
+
 padding-side($val,$valr)
   padding-left $val
   padding-right $valr
@@ -26,8 +81,11 @@ padding-side($val,$valr)
 textarea.form-control
   height auto
 
-.nav.nav-pills > li
-  display table-cell
+.father-pills
+  display table
+.nav
+  .nav-pills > li
+    display table-cell
 
 a:active,a:hover,a:focus,
 textarea:active,textarea:hover,textarea:focus
@@ -90,7 +148,7 @@ input:focus,button:focus,
     width 100%
   .create
     .nav.nav-pills > li
-      display inline-block
       font-size 11px
+      float left
       i.fa-4x
         font-size 2em

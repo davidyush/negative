@@ -1,3 +1,3 @@
 Meteor.Spinner.options = {
-  color: '#000', // #rgb or #rrggbb
+  color: '#666', // #rgb or #rrggbb
 };
