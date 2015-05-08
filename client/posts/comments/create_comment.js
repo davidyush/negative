@@ -16,5 +16,6 @@ Template.createComment.events({
       if(error)
         return throwError(error.reason);
     });
+    e.target.body.value = "";
   }
 });

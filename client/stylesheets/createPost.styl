@@ -105,6 +105,25 @@ input:focus,button:focus,
     border-bottom 1px solid #ecede5
     color #ecede5
 
+
+.load-more
+  margin 0 auto
+  display block
+  // max-width 200px
+
+
+
+.comment-row-cr
+  padding 10px
+  margin-bottom 20px
+
+#iron-router-progress
+  background-color #014B57
+  box-shadow 0 0 5px #000
+#iron-router-progress.spinner:before
+  border-color  #014B57
+
+
 @media only screen and (max-width:440px)
   .create-post
     margin-top 0px
@@ -137,7 +156,9 @@ input:focus,button:focus,
         overflow hidden
         .clearfix,.tags-list,h5,h6,p.form-text
           padding-side(10px,10px)
-
+    .comment-cont
+      .well
+        padding-side(10px,10px)
   .pull-left
     .btn-success
       width 100px

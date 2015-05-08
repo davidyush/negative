@@ -1,7 +1,22 @@
 <template name="postsList">
   <div class="container">
-    {{#each posts}}
-      {{>post}}
-    {{/each}}
+    <div class="row">
+      {{#each posts}}
+        {{>post}}
+      {{/each}}
+    </div>
+    {{#if nextPath}}
+    <div class="row">
+      <div class="col-md-7 col-md-offset-1 col-sm-12">
+        <a class="load-more btn btn-danger btn-lg" href="{{nextPath}}">Load more</a>
+      </div>
+    </div>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+
   </div>
+
 </template>
