@@ -1,16 +1,20 @@
 <template name="createVk">
   <form role="form" class="form-create-vk">
     <div class="form-group">
-      <input name="title" type="text" class="form-control" placeholder="Your title">
+      <label for="title-create-vk">Title:</label>
+      <input id="title-create-vk" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <input name="vkLink" type="text" class="form-control" placeholder="vk profile link">
+      <label for="profile-create-vk">Profile link from vk:</label>
+      <input id="profile-create-vk" name="vkLink" type="text" class="form-control" placeholder="vk profile link">
     </div>
     <div class="form-group">
-      <textarea name="text" rows="3" placeholder="Add some description" class="form-control create-text"></textarea>
+      <label for="text-create-vk">Description:</label>
+      <textarea id="text-create-vk" name="text" rows="4" placeholder="Add some description" class="form-control create-text"></textarea>
     </div>
     <div class="form-group">
-      <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
+      <label for="tags-create-vk">Tags:</label>
+      <input id="tags-create-vk" name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>

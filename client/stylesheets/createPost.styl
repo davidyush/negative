@@ -1,7 +1,30 @@
+@font-face
+  font-family "Grenadier NF"
+  src url("/fonts/GrenadierNF.ttf"),url("/fonts/GrenadierNF.otf")
+
+
+
 // loading
 html,body,main
-  width 100%
   height 100%
+  width 100%
+.main
+  min-height 100%
+  padding-bottom 100px
+  margin-bottom 40px
+.footer.container-fluid
+  background-color darken(#d64763,20%)
+  color #fff
+  // margin-top 250px
+  .pull-right .ico
+    position relative
+    left -5px
+    top 5px
+
+.container.reception
+  margin-top 120px
+.bootbox-body
+  font-size 16px
 
 .animo-cont
   width 100%
@@ -18,7 +41,7 @@ trans($what)
   -webkit-transform $what
   -moz-transform $what
   transform $what
-@keyframes blameing
+@keyframes blaming
   0%
     opacity 0
     trans(scale(0.8))
@@ -28,6 +51,7 @@ trans($what)
   100%
     opacity 0
     trans(scale(1))
+
 .block-animation
   border-radius 5px
   position absolute
@@ -36,22 +60,38 @@ trans($what)
   transform translate(-50%,-100%)
   p
     text-align center
-    font-family "Grenadier NF"
+    font-family "Grenadier NF","Open Sans","PT Sans",Helvetica,Arial;
     font-weight bold
     font-size 60px
     color #5d1722
     line-height 45px
     text-shadow 1px 1px 1px #536e69
     .first
-      animo(blameing,0s,ease-in-out,3.2s)
+      animo(blaming,0s,ease-in-out,3.2s)
     .second
-      animo(blameing,.4s,ease-in-out,3.2s)
+      animo(blaming,.4s,ease-in-out,3.2s)
     .third
-      animo(blameing,.7s,ease-in-out,3.2s)
+      animo(blaming,.7s,ease-in-out,3.2s)
 
 
 
 // end of loading
+
+.jumbotron
+  margin-top 50px
+  font-family "Grenadier NF"
+  background #e7d8c1
+  color #b2122a
+  h1
+    font-size 60px
+    animo(blaming,0s,ease-in-out,3.2s)
+  h2
+    font-size 50px
+    animo(blaming,.4s,ease-in-out,3.2s)
+  h3
+    font-size 45px
+    animo(blaming,.7s,ease-in-out,3.2s)
+
 
 padding-side($val,$valr)
   padding-left $val
@@ -61,6 +101,7 @@ padding-side($val,$valr)
   margin-top 80px
 .create-post
   margin-top 120px
+  margin-bottom 246px
 .create-text
   resize:none
 .form-text
@@ -89,7 +130,7 @@ textarea.form-control
 
 a:active,a:hover,a:focus,
 textarea:active,textarea:hover,textarea:focus
-input:focus,button:focus,
+input:focus,input:active,button:focus,button:active,
 .nav-tabs>li.active>a:hover,
 .nav-tabs>li.active>a:focus:hover
   outline none
@@ -99,18 +140,22 @@ input:focus,button:focus,
     border-bottom-left-radius 0
     border-bottom-right-radius 0
 
+.form-control
+  // border-color $border-color
+  box-shadow inset 0 1px 1px rgba(0, 0, 0, .075) // Redeclare so transitions work
+
+  &:focus
+    border-color darken(#01505D, 10%)
+    box-shadow inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten(#01505D, 20%)
 
 .navbar-right
   .form-control
     border-bottom 1px solid #ecede5
     color #ecede5
 
-
 .load-more
   margin 0 auto
   display block
-  // max-width 200px
-
 
 
 .comment-row-cr
@@ -121,8 +166,20 @@ input:focus,button:focus,
   background-color #014B57
   box-shadow 0 0 5px #000
 #iron-router-progress.spinner:before
-  border-color  #014B57
+  border-color  transparent
+  border none1
 
+
+@media only screen and (max-width:768px)
+  .create
+    .nav-justified > li
+      width 15%
+    .nav.nav-pills > li
+      display block
+      font-size 14px
+      float left
+      i.fa-4x
+        font-size 3em
 
 @media only screen and (max-width:440px)
   .create-post

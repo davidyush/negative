@@ -1,16 +1,20 @@
 <template name="createFacebook">
   <form role="form" class="form-create-fb">
     <div class="form-group">
-      <input name="title" type="text" class="form-control" placeholder="Your title">
+      <label for="title-create-fb">Title:</label>
+      <input id="title-create-fb" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <input name="fb" type="text" class="form-control" placeholder="Facebook profile link">
+      <label for="profile-create-fb">Profile link from Facebook:</label>
+      <input id="profile-create-fb" name="fb" type="text" class="form-control" placeholder="Facebook profile link">
     </div>
     <div class="form-group">
-      <textarea name="text" rows="3" placeholder="Add some description" class="form-control create-text"></textarea>
+      <label for="text-create-fb">Description:</label>
+      <textarea id="text-create-fb" name="text" rows="4" placeholder="Add some description" class="form-control create-text"></textarea>
     </div>
     <div class="form-group">
-      <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
+      <label for="tags-create-fb">Tags:</label>
+      <input id="tags-create-fb" name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>

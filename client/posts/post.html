@@ -6,7 +6,12 @@
             <h4>{{title}}</h4>
           </div>
           <div class="pull-right">
-            <p><small>{{dateCreated}}</small></p>
+            <p><small>{{#if author}}Posted by {{author}}{{/if}} {{momentDate}}</small></p>
+            {{#if ownPost}}
+              <button class="btn btn-danger delete pull-right">
+                <i class="fa fa-trash-o fa-x2"></i>
+              </button>
+            {{/if}}
           </div>
         </div>
         <hr>
@@ -44,15 +49,25 @@
         </ul>
         <div class="clearfix">
           <div class="pull-left">
-            <a href="{{pathFor 'postPage'}}" class="btn btn-success">{{commentsCount}} comments</a>
+            <a href="{{pathFor 'postPage'}}" class="btn btn-success">
+              {{pluralize commentsCount 'comment'}}
+              <i class="fa fa-comment"></i>
+            </a>
+
             <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
-            <!-- <button class="btn btn-danger delete">Delete</button> -->
+
           </div>
-          {{#if author}}
           <div class="pull-right">
-            <p><small>Posted by {{author}}</small></p>
+            <a href="#" class="btn btn-info upvote {{upvotedClass}}">
+              <!-- <span>{{votes}}</span> -->
+              <i class="fa fa-heart"></i>
+            </a>
+            <a href="#" class="btn btn-default">{{result}}</a>
+            <a href="#" class="btn btn-danger downvote {{downvotedClass}}">
+              <!-- <span>{{negatives}}</span> -->
+              <i class="fa fa-ban"></i>
+            </a>
           </div>
-          {{/if}}
         </div>
       </div>
     </div>

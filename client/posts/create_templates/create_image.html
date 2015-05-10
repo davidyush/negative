@@ -1,16 +1,20 @@
 <template name="createImage">
   <form role="form" class="form-create-image">
     <div class="form-group">
-      <input name="title" type="text" class="form-control" placeholder="Your title">
+      <label for="title-create-img">Title:</label>
+      <input id="title-create-img" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <input name="image" type="text" class="form-control" placeholder="http of an image">
+      <label for="link-create-img">Link on image:</label>
+      <input id="link-create-img" name="image" type="text" class="form-control" placeholder="http of an image">
     </div>
     <div class="form-group">
-      <textarea name="text" rows="3" placeholder="Add some description" class="form-control create-text"></textarea>
+      <label for="text-create-img">Description</label>
+      <textarea id="text-create-img" name="text" rows="4" placeholder="Add some description" class="form-control create-text"></textarea>
     </div>
     <div class="form-group">
-      <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
+      <label for="tags-create-img">Tags:</label>
+      <input id="tags-create-img" name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>

@@ -1,16 +1,20 @@
 <template name="createYoutube">
   <form role="form" class="form-create-youtube">
     <div class="form-group">
-      <input name="title" type="text" class="form-control" placeholder="Your title">
+      <label for="title-create-youtube">Title:</label>
+      <input id="title-create-youtube" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <input name="youtube" type="text" class="form-control" placeholder="Youtube link">
+      <label for="ytlink-create-youtube">Youtube link:</label>
+      <input id="ytlink-create-youtube" name="youtube" type="text" class="form-control" placeholder="Youtube link">
     </div>
     <div class="form-group">
-      <textarea name="text" rows="3" placeholder="Add some description" class="form-control create-text"></textarea>
+      <label for="text-create-youtube">Description:</label>
+      <textarea id="text-create-youtube" name="text" rows="4" placeholder="Add some description" class="form-control create-text"></textarea>
     </div>
     <div class="form-group">
-      <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
+      <label for="tags-create-youtube">Tags:</label>
+      <input id="tags-create-youtube" name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>

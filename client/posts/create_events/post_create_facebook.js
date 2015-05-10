@@ -8,9 +8,6 @@ Template.createFacebook.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
-
     var getUserId = function(userUrl) {
       var user_name = userUrl.split('/').pop().split("?")[0];
       if(user_name !== "profile.php") {
@@ -47,7 +44,6 @@ Template.createFacebook.events({
         title: e.target.title.value,
         text: e.target.text.value,
         tags:tags,
-        dateCreated: time,
         profileLink: urlProfile,
         profileGender: user_info.gender,
         profileName: user_info.name,

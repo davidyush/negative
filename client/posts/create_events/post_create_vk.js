@@ -8,9 +8,6 @@ Template.createVk.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
-
     function getUserId(link) {
       var id = link.split('/').pop();
       if(id.substring(0,2) === "id") {
@@ -40,8 +37,7 @@ Template.createVk.events({
     var post = {
       title: e.target.title.value,
       text: e.target.text.value,
-      tags: tags,
-      dateCreated: time
+      tags: tags
     };
 
     var searchFields = ['sex','photo_200'];

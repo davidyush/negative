@@ -11,9 +11,6 @@ Template.createText.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
-
     // var text = e.target.text.value;
     // if(text.length > 50) {
     //   throwError("More than 50 symbols!");
@@ -22,8 +19,7 @@ Template.createText.events({
     var post = {
       title:e.target.title.value,
       text: e.target.text.value,
-      tags:tags,
-      dateCreated: time
+      tags:tags
     };
 
     Meteor.call('textInsert', post, function(error,result) {

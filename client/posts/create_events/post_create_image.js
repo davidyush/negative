@@ -9,16 +9,13 @@ Template.createImage.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
 
     console.log(tags);
     var post = {
       title:e.target.title.value,
       text: e.target.text.value,
       image: e.target.image.value,
-      tags:tags,
-      dateCreated: time
+      tags:tags
     };
 
     Meteor.call('imageInsert', post, function(error,result) {

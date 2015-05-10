@@ -9,9 +9,6 @@ Template.createYoutube.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
-
     var link = e.target.youtube.value;
     //var id = link.split("v=")[1].substring(0, 11)
     var id = link.split("=");
@@ -24,8 +21,7 @@ Template.createYoutube.events({
       title: e.target.title.value,
       text: e.target.text.value,
       youtubeId: id,
-      tags: tags,
-      dateCreated: time
+      tags: tags
     };
 
     Meteor.call('youtubeInsert', post, function(error,result) {

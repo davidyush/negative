@@ -9,9 +9,6 @@ Template.createLink.events({
       tags[i] = tags[i].trim();
     }
 
-    var time = new Date();
-    time = time.toLocaleTimeString() + " " + time.toDateString();
-
     var a = document.createElement('a');
     a.href = e.target.link.value;
     console.log('a.href',a.href);
@@ -25,8 +22,7 @@ Template.createLink.events({
       nameLink: e.target.nameLink.value,
       text: e.target.text.value,
       domain: domain,
-      tags:tags,
-      dateCreated: time
+      tags:tags
     };
 
     Meteor.call('linkInsert', post, function(error,result) {

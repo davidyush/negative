@@ -4,17 +4,22 @@
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <i class="fa fa-ellipsis-v" style="color:#fff"></i>
+          <i class="fa fa-bars" style="color:#fff"></i>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'postsList'}}">Blame</a>
-
+        <a class="navbar-brand" href="{{pathFor 'home'}}">Blame</a>
       </div>
       <!-- links-nav -->
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav">
+          <li>
+            <a href="{{pathFor 'newPosts'}}">Live</a>
+          </li>
+          <li>
+            <a href="{{pathFor 'bestPosts'}}">Best</a>
+          </li>
           {{#if currentUser}}
             <li class="sub-create">
-              <a href="{{pathFor 'postCreate'}}">Post Something</a>
+              <a href="{{pathFor 'postCreate'}}">Publish</a>
             </li>
             <li class="dropdown">
               {{> notifications}}
@@ -26,7 +31,10 @@
           <div class="form-group">
             <input type="text" class="form-control" id="tag-word" placeholder="search by hash-tag">
           </div>
-          <button type="submit" class="btn btn-primary search-tag">Search</button>
+          <button type="submit" class="btn btn-primary search-tag">
+            <i class="fa fa-search"></i>
+            <span>Search</span>
+          </button>
         </form>
       </div>
     </div>

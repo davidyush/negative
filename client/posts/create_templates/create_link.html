@@ -1,19 +1,24 @@
 <template name="createLink">
   <form role="form" class="form-create-link">
     <div class="form-group">
-      <input name="title" type="text" class="form-control" placeholder="Your title">
+      <label for="title-create-link">Title:</label>
+      <input id="title-create-link" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <input name="link" type="text" class="form-control" placeholder="http of a link">
+      <label for="http-create-link">Link:</label>
+      <input id="http-create-link" name="link" type="text" class="form-control" placeholder="http of a link">
     </div>
     <div class="form-group">
-      <input name="nameLink" type="text" class="form-control" placeholder="name of a link">
+      <label for="name-create-link">Name of link:</label>
+      <input id="name-create-link" name="nameLink" type="text" class="form-control" placeholder="name of a link">
     </div>
     <div class="form-group">
-      <textarea name="text" rows="3" placeholder="Add some description" class="form-control create-text"></textarea>
+      <label for="text-create-link">Description:</label>
+      <textarea id="text-create-link" name="text" rows="4" placeholder="Add some description" class="form-control create-text"></textarea>
     </div>
     <div class="form-group">
-      <input name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
+      <label for="tags-create-link">Tags:</label>
+      <input id="tags-create-link" name="tags" type="text" class="form-control" placeholder="#hash tag one #hash tag two">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-lg btn-primary">Submit</button>
