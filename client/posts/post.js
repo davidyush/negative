@@ -50,16 +50,6 @@ Template.post.helpers({
 // }());
 
 Template.post.events({
-  "click .delete": function(e) {
-    e.preventDefault();
-    var postId = this._id;
-    bootbox.confirm("Delete your post?", function(result) {
-      if(result) {
-        Meteor.call('removeIt',postId);
-        Router.go('home');
-      }
-    });
-  },
   'click .upvote': function(e) {
     e.preventDefault();
     Meteor.call('upvote',this._id);

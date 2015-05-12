@@ -1,17 +1,14 @@
 <template name="post">
     <div class="col-md-7 col-md-offset-1 col-sm-12">
       <div class="well">
-        <div class="header clearfix">
-          <div class="pull-left">
-            <h4>{{title}}</h4>
-          </div>
-          <div class="pull-right">
-            <p><small>{{#if author}}Posted by {{author}}{{/if}} {{momentDate}}</small></p>
-            {{#if ownPost}}
-              <button class="btn btn-danger delete pull-right">
-                <i class="fa fa-trash-o fa-x2"></i>
-              </button>
-            {{/if}}
+        <div class="header head-post clearfix">
+          <div class="row">
+            <div class="col-l col-md-8 col-sm-6 col-xs-7">
+              <h4 class="text-left">{{title}}</h4>
+            </div>
+            <div class="col-r col-md-4 col-sm-6 col-xs-5">
+              <p class="text-right"><small>{{#if author}}Posted by {{author}}{{/if}} {{momentDate}}</small></p>
+            </div>
           </div>
         </div>
         <hr>

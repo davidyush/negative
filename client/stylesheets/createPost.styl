@@ -174,6 +174,18 @@ input:focus,input:active,button:focus,button:active,
         font-size 3em
 
 @media only screen and (max-width:440px)
+  .well >.head-post
+    .row
+      padding-side(0px,0px)
+      .col-l,.col-r
+        padding-side(0px,0px)
+  .delete
+    margin-right 15px
+  .comment-row-cr
+    padding-side(0px,0px)
+    .comment-form
+      .btn-primary
+        margin-left 15px
   .create-post
     margin-top 0px
   button.navbar-toggle
@@ -205,12 +217,11 @@ input:focus,input:active,button:focus,button:active,
         overflow hidden
         .clearfix,.tags-list,h5,h6,p.form-text
           padding-side(10px,10px)
+        .header-comment
+          padding-side(0px,0px)
     .comment-cont
       .well
         padding-side(10px,10px)
-  // .pull-left
-  //   .btn-success
-  //     min-width 100px
   .iframe
     width 100%
     height 250px
