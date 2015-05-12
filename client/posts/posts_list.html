@@ -1,6 +1,6 @@
 <template name="postsList">
   <div class="container">
-    <div class="row">
+    <div class="row posts-list">
       {{#each posts}}
         {{>post}}
       {{/each}}
@@ -8,7 +8,7 @@
     {{#if nextPath}}
     <div class="row">
       <div class="col-md-7 col-md-offset-1 col-sm-12">
-        <a class="load-more btn btn-danger btn-lg" href="{{nextPath}}">Load more</a>
+        <a id="load-more" class="load-more btn btn-danger btn-lg" href="{{nextPath}}">Load more</a>
       </div>
     </div>
     {{else}}

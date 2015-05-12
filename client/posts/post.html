@@ -21,7 +21,7 @@
         {{/if}}
         {{#if image}}
         <div class="row img-post">
-          <div class="col-md-11 col-sm-12">
+          <div class="col-md-12 col-sm-12">
             <img src="{{image}}" class="img-responsive">
           </div>
         </div>
@@ -29,18 +29,23 @@
         {{#if youtubeId}}
           <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubeId}}" frameborder="0" allowfullscreen></iframe>
         {{/if}}
-        {{#if profileImgUrl}}
+
+        {{#if profileName}}
         <div class="row">
           <div class="col-md-5 col-sm-12">
-            <img src="{{profileImgUrl}}">
+            <img src="{{profileImgUrl}}" class="img-responsive">
           </div>
           <div class="col-md-5 col-sm-12">
             <h3>{{profileName}}</h3>
             <h4>{{profileGender}}</h4>
+            <h4>{{profileCity}}</h4>
+            <h4>{{profileCountry}}</h4>
+            <h4>{{profileBdate}}</h4>
             <a target="_blank" href="{{profileLink}}">Link on profile</a>
           </div>
         </div>
         {{/if}}
+
         <p class="form-text">{{text}}</p>
         <ul class="list-unstyled list-inline tags-list">
           {{#each tags}}
@@ -50,7 +55,8 @@
         <div class="clearfix">
           <div class="pull-left">
             <a href="{{pathFor 'postPage'}}" class="btn btn-success">
-              {{pluralize commentsCount 'comment'}}
+              <!-- {{pluralize commentsCount 'comment'}} -->
+              {{commentsCountd}}
               <i class="fa fa-comment"></i>
             </a>
 
