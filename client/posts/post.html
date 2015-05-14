@@ -7,7 +7,7 @@
               <h4 class="text-left">{{title}}</h4>
             </div>
             <div class="col-r col-md-4 col-sm-6 col-xs-5">
-              <p class="text-right"><small>{{#if author}}Posted by {{author}}{{/if}} {{momentDate}}</small></p>
+              <p class="text-right"><small>Posted by {{author}}<br>{{momentDate}}</small></p>
             </div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         {{/if}}
         {{#if image}}
         <div class="row img-post">
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-10 col-sm-12">
             <img src="{{image}}" class="img-responsive">
           </div>
         </div>
@@ -29,14 +29,12 @@
 
         {{#if profileName}}
         <div class="row">
-          <div class="col-md-5 col-sm-12">
+          <div class="col-md-5 col-sm-10">
             <img src="{{profileImgUrl}}" class="img-responsive">
           </div>
           <div class="col-md-5 col-sm-12">
-            <h3>{{profileName}}</h3>
-            <h4>{{profileGender}}</h4>
-            <h4>{{profileCity}}</h4>
-            <h4>{{profileCountry}}</h4>
+            <h4>{{profileName}}, <span>{{profileGender}}</span></h4>
+            <h4>{{profileCountry}},{{profileCity}}</h4>
             <h4>{{profileBdate}}</h4>
             <a target="_blank" href="{{profileLink}}">Link on profile</a>
           </div>
@@ -53,8 +51,8 @@
           <div class="pull-left">
             <a href="{{pathFor 'postPage'}}" class="btn btn-success">
               <!-- {{pluralize commentsCount 'comment'}} -->
-              {{commentsCount}}
               <i class="fa fa-comment"></i>
+              {{commentsCount}}
             </a>
 
             <!-- <a href="{{pathFor 'postEdit'}}" class="btn btn-primary">Edit</a> -->
@@ -62,13 +60,13 @@
           </div>
           <div class="pull-right">
             <a href="#" class="btn btn-info upvote {{upvotedClass}}">
-              <!-- <span>{{votes}}</span> -->
               <i class="fa fa-heart"></i>
+              <span>{{votesCount}}</span>
             </a>
-            <a href="#" class="btn btn-default">{{result}}</a>
+            <!-- <a href="#" class="btn btn-default">{{result}}</a> -->
             <a href="#" class="btn btn-danger downvote {{downvotedClass}}">
-              <!-- <span>{{negatives}}</span> -->
-              <i class="fa fa-ban"></i>
+              <i class="fa fa-paw"></i>
+              <span>{{negativesCount}}</span>
             </a>
           </div>
         </div>

@@ -7,16 +7,22 @@
           <i class="fa fa-bars" style="color:#fff"></i>
         </button>
         <a class="navbar-brand" href="{{pathFor 'home'}}">Blame</a>
+        <a href="{{pathFor 'newPosts'}}" class="navbar-brand top">
+          <i class="fa fa-heartbeat" style="color:#fff"></i> Live
+        </a>
+        <a href="{{pathFor 'bestPosts'}}" class="navbar-brand top">
+          <i class="fa fa-angellist" style="color:#fff"></i> Best
+        </a>
       </div>
       <!-- links-nav -->
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav">
-          <li>
-            <a href="{{pathFor 'newPosts'}}">Live</a>
+          <!-- <li>
+            <a href="{{pathFor 'newPosts'}}"><i class="fa fa-heartbeat" style="color:#fff"></i> Live</a>
           </li>
           <li>
-            <a href="{{pathFor 'bestPosts'}}">Best</a>
-          </li>
+            <a href="{{pathFor 'bestPosts'}}"><i class="fa fa-angellist" style="color:#fff"></i> Best</a>
+          </li> -->
           {{#if currentUser}}
             <li class="sub-create">
               <a href="{{pathFor 'postCreate'}}">Publish</a>

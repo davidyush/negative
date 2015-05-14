@@ -16,10 +16,16 @@ Template.post.helpers({
     else
       return 'btn-danger disabled';
   },
-  result: function() {
-    var res = (this.votes || 0) - (this.negatives || 0);
-
-    return res;
+  // result: function() {
+  //   var res = (this.votes || 0) - (this.negatives || 0);
+  //
+  //   return res;
+  // },
+  votesCount: function() {
+    return this.votes || 0;
+  },
+  negativesCount: function() {
+    return this.negatives || 0;
   },
   momentDate: function() {
     return moment(this.submitted).fromNow();

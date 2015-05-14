@@ -12,7 +12,8 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 underscore
 natestrauser:font-awesome
-fleple:zboot
 multiply:iron-router-progress
 momentjs:moment
 mizzao:bootboxjs
+fleple:zboot
+meteorhacks:fast-render
