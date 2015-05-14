@@ -21,9 +21,17 @@
             <li class="sub-create">
               <a href="{{pathFor 'postCreate'}}">Publish</a>
             </li>
-            <li class="dropdown">
-              {{> notifications}}
+            <li>
+              <a href="{{pathFor 'notiBeta'}}">
+                Notifications
+                {{#if notificationCount}}
+                  <span class="badge badge-inverse">{{notificationCount}}</span>
+                {{/if}}
+              </a>
             </li>
+            <!-- <li class="dropdown">
+              {{> notifications}}
+            </li> -->
           {{/if}}
           {{>loginButtons}}
         </ul>

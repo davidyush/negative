@@ -29,29 +29,11 @@ Template.post.helpers({
   }
 });
 
-// var Example = (function() {
-//   "use strict";
-//   var elem,
-//     hideHandler,
-//     that = {};
-//
-//   that.init = function(options) {
-//     elem = $(options.selector);
-//   };
-//
-//   that.show = function(text) {
-//     clearTimeout(hideHandler);
-//
-//     elem.find("span").html(text);
-//     elem.delay(200).fadeIn().delay(4000).fadeOut();
-//   };
-//
-//   return that;
-// }());
 
 Template.post.events({
   'click .upvote': function(e) {
     e.preventDefault();
+    console.log("this._id in vote client",this._id);
     Meteor.call('upvote',this._id);
   },
   'click .downvote': function(e) {

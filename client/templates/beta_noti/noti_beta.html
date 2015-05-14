@@ -1,0 +1,39 @@
+<template name="notiBeta">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-md-offset-1 col-sm-12">
+        <article>
+          {{#each notisBeta}}
+            {{> notiBetaItem}}
+          {{/each}}
+        </article>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="notiBetaItem">
+  <aricle class="clearfix">
+    <p class="pull-left">
+      <a href="{{notificationPostPath}}">
+        {{#if commenterName}}
+        <i class="fa fa-comments"></i>
+        <strong>{{commenterName}}</strong> commented on your post
+        {{/if}}
+        {{#if voterName}}
+        <i class="fa fa-heart"></i>
+        <strong>{{voterName}}</strong> likes your post
+        {{/if}}
+        {{#if unvoterName}}
+        <i class="fa fa-minus-circle"></i>
+        <strong>{{unvoterName}}</strong> hates your post
+        {{/if}}
+        <span>{{title}}</span>
+      </a>
+    </p>
+    <p class="pull-right">
+      {{notyDate}}
+    </p>
+  </aricle>
+  <hr>
+</template>

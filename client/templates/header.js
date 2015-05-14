@@ -3,6 +3,13 @@ var mobileNavToggle = function(action) {
     $("#nav-collapse").collapse(action);
   }
 }
+
+Template.header.helpers({
+  notificationCount: function(){
+  	return Notifications.find({userId: Meteor.userId(), read: false}).count();
+  }
+});
+
 Template.header.events({
   'click .search-tag':function(e) {
     e.preventDefault();
