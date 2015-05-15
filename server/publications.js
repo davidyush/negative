@@ -19,3 +19,7 @@ Meteor.publish('singlePost',function(id) {
   check(id,String);
   return Posts.find(id);
 });
+
+Meteor.publish('images',function() {
+  return Images.find();
+});

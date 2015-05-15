@@ -5,8 +5,12 @@
       <input id="title-create-img" name="title" type="text" class="form-control" placeholder="Your title">
     </div>
     <div class="form-group">
-      <label for="link-create-img">Link on image:</label>
+      <label class="link-img" for="link-create-img">Link on image:</label>
       <input id="link-create-img" name="image" type="text" class="form-control" placeholder="http of an image">
+    </div>
+    <div class="form-group">
+      <label class="upload-img" for="uploadImg">Or you can upload image</label>
+      <div class="wrap-file"><span><i class="fa fa-file-image-o"></i></span><input id="uploadImg" type="file" name="uploadImg" class="form-control imgInput"></div><span>File name: {{fileName}}</span>
     </div>
     <div class="form-group">
       <label for="text-create-img">Description</label>

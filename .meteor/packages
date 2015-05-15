@@ -17,3 +17,6 @@ momentjs:moment
 mizzao:bootboxjs
 fleple:zboot
 meteorhacks:fast-render
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem
